@@ -3,7 +3,7 @@ This repository holds the source code and data for our paper: *POPS: An Efficien
 
 ## Prerequisites
 To use the code, you need:
-- NVIDIA-GPU with computational compatibility >= 7.5
+- NVIDIA-GPU with computate capability >= 7.5
 - Python 3
 - CUDA Toolkit >= 11.0
 - Eigen library
