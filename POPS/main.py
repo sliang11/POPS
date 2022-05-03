@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append('/mypath/POPS_VLDB/')  # change "mypath" to your own
+sys.path.append('/mypath/POPS/')  # change "mypath" to your own
 
 from feature_extractor import PtCloudFeatExtractor
 from util.file_util import *
@@ -33,9 +33,9 @@ class FeatExtrRunner(object):
             currently supports 'CPU', 'POPS-NMS', 'POPS'
         :param feat_agg_met: the feature aggregation method to use, currently supports 'CPU', 'GPU'.
         :param raw_feat_extr_threads_per_block: Number of GPU threads per block for raw feature extraction,
-            only effective when raw_feat_extr_framework is not 'CPU'
+            only effective when raw_feat_extr_framework is not 'CPU'. Make sure this is an integer multiple of 16!
         :param feat_agg_threads_per_block: Number of GPU threads per block for feature aggregation,
-            only effective when feat_agg_met is not 'CPU'
+            only effective when feat_agg_met is not 'CPU'. Make sure this is an integer multiple of 16!
         """
 
         for para in inspect.signature(self.__init__).parameters.keys():
@@ -120,14 +120,16 @@ if __name__ == '__main__':
     result_path = sys.argv[2]
     data_id = sys.argv[3]
     idw_alpha = int(sys.argv[4])
-    ex_scale = float(sys.argv[5])
-    feat_scales = [float(scale) for scale in sys.argv[6].split('_')]
-    feat_steps = [float(step) for step in sys.argv[7].split('_')]
-    core_met = sys.argv[7]
-    raw_feat_extr_framework = sys.argv[8]
-    feat_agg_met = sys.argv[9]
-    raw_feat_extr_threads_per_block = sys.argv[10] if len(sys.argv) > 10 else 256
-    feat_agg_threads_per_block = sys.argv[11] if len(sys.argv) > 11 else 256
+    core_met = sys.argv[5]
+    raw_feat_extr_framework = sys.argv[6]
+    feat_agg_met = sys.argv[7]
+    ex_scale = float(sys.argv[8]) if len(sys.argv) > 8 else 2000
+    feat_scales = [float(scale) for scale in sys.argv[9].split('_')] if len(sys.argv) > 9 else \
+        np.array((300, 400, 500, 700, 800, 900, 1100, 1200, 1300), dtype=float)
+    feat_steps = [float(step) for step in sys.argv[10].split('_')] if len(sys.argv) > 10 else \
+        feat_scales * .5
+    raw_feat_extr_threads_per_block = sys.argv[11] if len(sys.argv) > 11 else 256
+    feat_agg_threads_per_block = sys.argv[12] if len(sys.argv) > 12 else 256
 
     runner = FeatExtrRunner(
         data_path, result_path, data_id, idw_alpha, ex_scale, feat_scales, feat_steps,
