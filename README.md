@@ -27,7 +27,7 @@ The meanings of the paramters are as follows:
 - feat_agg_met: the feature aggregation method to use, currently supports "CPU", "GPU".
 - idw_alpha: a parameter for the interpolation method we used to obtain the data grids. Changing this will cause running on different grids for the same data_id. You can set it to one of 1, 2, 3, 4, 5.
 - ex_scale (optional): the example scale in meters. Default is 2000. Example sampling step is hard-coded to be equal to ex_scale at the moment.
-- feat_scales (optional): the feature scales in meters. If there are more than one feature scales you wish to set, use "\_" to join them. Default is 300\_400\_500\_700\_800\_900\_1100\_1200\_1300
+- feat_scales (optional): the feature scales in meters. If there are more than one feature scales you wish to set, use "\_" to join them. Default is 300\_400\_500\_700\_800\_900\_1100\_1200\_1300.
 - feat_steps (optional): the feature sampling steps in meters, each correspond to one of feat_scales. Use "\_" to join multiple feature steps. Default is half of all the default feature scales.
 - raw_feat_extr_threads_per_block (optional): Number of GPU threads per block for raw feature extraction, only effective when raw_feat_extr_framework is not 'CPU'. Make sure this is an integer multiple of 16. Default is 256.
 - feat_agg_threads_per_block (optional): Number of GPU threads per block for feature aggregation, only effective when feat_agg_met is not 'CPU'. Make sure this is an integer multiple of 16. Default is 256.
