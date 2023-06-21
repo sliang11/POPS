@@ -1,7 +1,8 @@
 # POPS
-This repository holds the source code and data for our paper: *POPS: A Generic GPU-based Framework for Two-level Multi-scale Feature Extraction from Massive Planetary LiDAR Data*, submitted to **IEEE Geoscience and Remote Sensing Letters**. 
+This repository holds the source code and data for our paper: *POPS: An Efficient GPU-based Framework for Multi-scale Feature
+Extraction from Massive Planetary LiDAR Data*, submitted to **VLDB 2024 (Scalable Data Science Track)**. 
 
-This paper is a concise version of this preprint: Liang, Shen; Lucas, Antoine; Porder, Stephen; Sainton, Gregory; Fournier, Alexandre; Palpanas, Themis (2022): FARMYARD: A Generic GPU-based Pipeline for Feature Discovery from Massive Planetary LiDAR Data. TechRxiv. Preprint. https://doi.org/10.36227/techrxiv.21303411.v1
+This repository is intended as supporting materials for the reviewing process of our paper only. Please do not use it for any other purposes.
 
 ## Prerequisites
 To use the code, you need:
