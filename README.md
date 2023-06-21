@@ -6,7 +6,7 @@ This repository is intended as supporting materials for the reviewing process of
 
 ## Prerequisites
 To use the code, you need:
-- NVIDIA-GPU with computate capability >= 7.5
+- NVIDIA-GPU with compute capability >= 7.5
 - Python 3
 - CUDA Toolkit >= 11.0
 - Eigen library
