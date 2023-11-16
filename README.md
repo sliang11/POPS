@@ -1,6 +1,6 @@
 # POPS
 This repository holds the source code and data for our paper: *POPS: An Efficient GPU-based Framework for Multi-scale Feature
-Extraction from Massive Planetary LiDAR Data*, submitted to **VLDB 2024 (Scalable Data Science Track)**. 
+Extraction from Massive Planetary LiDAR Data*, submitted to **TKDE**. 
 
 This repository is intended as supporting materials for the reviewing process of our paper only. Please do not use it for any other purposes.
 
